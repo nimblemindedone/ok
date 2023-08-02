@@ -1,8 +1,23 @@
+local verifiedd = {"3262475518", "4868543686", "546280191"}
+local useridd = game.Players.LocalPlayer.UserId
+local verified
+local vfinish = true
+
+for i,v in verifiedd do
+ if v == useridd then
+ verified = true 
+ end
+end
+wait(0.2)
+if verified == false then
+ game.Players.LocalPlayer:Kick("Not verified for this script, dm afvk for a verify.")
+end
+
 if isfile('huntingaplr.txt') == false then
  writefile('huntingaplr.txt', 'false')
 end
 if isfile('huntedplr.txt') == false then
- writefile('huntedplr.txt', 'ilimitsasa')
+ writefile('huntedplr.txt', 'nil')
 end
 
 local Player = game.Players.LocalPlayer
@@ -14,7 +29,7 @@ rchat = function(Message)
   Players:Chat(Message)
 end
 
-if readfile('huntingaplr.txt') then
+if readfile('huntingaplr.txt') == 'true' then
     coroutine.wrap(function()
      while wait() do
         for i,v in Players:GetChildren() do
@@ -53,7 +68,7 @@ end)
 
 Player.Chatted:Connect(function(msg)
     local c = msg
-    if c == ".Fs" then
+    if c == "Freeze shutdown" then
        rchat(':sm SERVER HAS BEEN FROZEN | :loadb ping')
     end
 end)
@@ -124,5 +139,3 @@ Player.Chatted:Connect(function(msg)
         end)
     end
 end)
-
-rchat(':textw me script loaded. CMDS are ("nkick", "allkick", ".Fs", ".hunt Full_Player_Name", ".nohunt", ".noname", ".nolag"')
