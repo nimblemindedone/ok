@@ -68,7 +68,7 @@ end)
 
 Player.Chatted:Connect(function(msg)
     local c = msg
-    if c == "Freeze shutdown" then
+    if c == ".Fs" then
        rchat(':sm SERVER HAS BEEN FROZEN | :loadb ping')
     end
 end)
@@ -139,3 +139,5 @@ Player.Chatted:Connect(function(msg)
         end)
     end
 end)
+
+rchat("cmds are: nkick, allkick, .Fs, .hunt Player_Name_Here, .nohunt, .noname, .nolag")
