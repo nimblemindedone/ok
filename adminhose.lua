@@ -140,4 +140,4 @@ Player.Chatted:Connect(function(msg)
     end
 end)
 
-rchat("cmds are: nkick, allkick, .Fs, .hunt Player_Name_Here, .nohunt, .noname, .nolag")
+rchat(":textw me cmds are: nkick, allkick, .Fs, .hunt Player_Name_Here, .nohunt, .noname, .nolag")
