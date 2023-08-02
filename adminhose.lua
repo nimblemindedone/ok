@@ -13,9 +13,7 @@ local nkick = 'no talk kick'
 rchat = function(Message)
   Players:Chat(Message)
 end
-if isfile('huntingaplr.txt') == false then
- writefile('huntingaplr.txt', 'false')
-end
+
 if readfile('huntingaplr.txt') then
     coroutine.wrap(function()
      while wait() do
@@ -55,7 +53,7 @@ end)
 
 Player.Chatted:Connect(function(msg)
     local c = msg
-    if c == "Freeze shutdown" then
+    if c == ".Fs" then
        rchat(':sm SERVER HAS BEEN FROZEN | :loadb ping')
     end
 end)
@@ -126,3 +124,5 @@ Player.Chatted:Connect(function(msg)
         end)
     end
 end)
+
+rchat(':textw me script loaded. CMDS are ("nkick", "allkick", ".Fs", ".hunt Full_Player_Name", ".nohunt", ".noname", ".nolag"')
