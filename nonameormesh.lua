@@ -1,8 +1,13 @@
-while wait() do
-function plrFromChr(character)for _, player in pairs(game:GetService("Players"):GetPlayers())do if player.Character==character then return(player)end end end
-	for i,v in pairs(workspace:GetDescendants())do
-		if not plrFromChr(v)and v.Name=='Mesh'and not v:IsDescendantOf(workspace.SecureParts) then
-			v:Destroy()
+local RS = game:GetService("RunService")
+
+while RS.heartbeat:wait() do
+    for i,v in pairs(workspace:GetDescendants())do
+        if v.Name=='Mesh' or v.Name=='SpecialMesh' then
+            if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
+                if not v:IsDescandantOf(Workspace.SecureParts)
+                    v:Destroy()
+                end
+            end
         end
     end
     for i,v in game.workspace:GetDescendants() do
@@ -13,3 +18,4 @@ function plrFromChr(character)for _, player in pairs(game:GetService("Players"):
         end
     end
 end
+
