@@ -4,7 +4,7 @@ while RS.heartbeat:wait() do
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
-                if not v:IsDescandantOf(Workspace.SecureParts)
+                if not v:IsDescendantOf(Workspace.SecureParts) then
                     v:Destroy()
                 end
             end
@@ -18,4 +18,3 @@ while RS.heartbeat:wait() do
         end
     end
 end
-
