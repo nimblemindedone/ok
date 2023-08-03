@@ -1,6 +1,6 @@
-local RS = game:GetService("RunService")
 
-while RS.heartbeat:wait() do
+
+while wait(0.7) do
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
