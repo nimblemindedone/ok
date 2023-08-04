@@ -1,16 +1,30 @@
-local verifiedd = {"3262475518", "4868543686", "546280191"}
+local verifiedd = {3262475518, 4868543686, 546280191}
 local useridd = game.Players.LocalPlayer.UserId
-local verified
-local vfinish = true
+local verified = false
+local vfinish = false
+local vplayers = 0
+print("Loaded variables!")
+
+for i,v in verifiedd do
+ vplayers = vplayers + 1
+end
 
 for i,v in verifiedd do
  if v == useridd then
  verified = true 
  end
+
+ if i == vplayers then
+ vfinish = true
+ end
 end
-wait(0.2)
+
+print("Checked Verification!")
+
+repeat wait() until vfinish == true
+print("Finished verification!")
 if verified == false then
- game.Players.LocalPlayer:Kick("Not verified for this script, dm afvk for a verify.")
+ game.Players.LocalPlayer:Kick("Not verified for this script, dm afvk on discord to get verified.")
 end
 
 if isfile('huntingaplr.txt') == false then
