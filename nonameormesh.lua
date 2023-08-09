@@ -1,6 +1,4 @@
-
-
-while wait(0.7) do
+while wait() do
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
