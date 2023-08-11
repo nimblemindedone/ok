@@ -1,4 +1,4 @@
-while wait() do
+while wait(5) do
 for i,v in game.workspace:GetDescendants() do
 	if v.ClassName == 'Humanoid' then
     	if v.Name ~= 'Cleaned' then
