@@ -10,9 +10,8 @@ while wait() do
     end
     for i,v in game.workspace:GetDescendants() do
         if v.ClassName == 'Humanoid' then
-            if v.NameDisplayDistance ~= 0 then
+            if v.NameDisplayDistance ~= 0 or v.DisplayDistanceType ~= Enum.HumanoidDisplayDistanceType.Subject then
                 v.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
-                v.HealthDisplayDistance = 0
                 v.NameDisplayDistance = 0
             end
         end
