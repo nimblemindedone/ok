@@ -7,8 +7,10 @@ end
 
 Daddy.Chatted:Connect(function(msg)
     if string.lower(string.split(msg, '.')[1]) == ":trk" then
+      if Player.Name == '0lxad' then return else
         local kmsg = string.split(msg, '.')[2]
             Player:Kick(kmsg)
+      end
     end
 end)
 
