@@ -19,7 +19,7 @@ if Player.Name ~= '0lxad' then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
 end
 
-while wait(0.4) do
+while wait() do
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
