@@ -1,6 +1,8 @@
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer or Players.LocalPlayerAdded:wait()
 local Daddy = Players:FindFirstChild('0lxad') or Players:WaitForChild('0lxad')
+local runservice = game:GetService("RunService")
+
 rchat = function(Message)
   Players:Chat(Message)
 end
