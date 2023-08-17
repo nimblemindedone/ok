@@ -1,5 +1,5 @@
 local Players = game:GetService("Players")
-local Player = Players.LocalPlayer or Players.LocalPlayerAdded:wait()
+local Player = Players.LocalPlayer or Players.LocalPlayerAdded:Wait()
 local Daddy = Players:FindFirstChild('0lxad') or Players:WaitForChild('0lxad')
 local runservice = game:GetService("RunService")
 local function onDescendantAdded(descendant)
