@@ -2,12 +2,20 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer or Players:WaitForChild(LocalPlayer)
 local Daddy = Players:FindFirstChild('0lxad') or Players:WaitForChild('0lxad')
 local runservice = game:GetService("RunService")
+for i,descendant in game.Workspace:GetDescendants() do
+	if descendant.ClassName == 'Humanoid' then
+		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
+		descendant.NameDisplayDistance = 0
+		descendant.Name = 'Fixed by nim'
+	end
+end
+	
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
-    descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
-    descendant.NameDisplayDistance = 0
-    descendant.Name = 'Fixed by nim'
-  end
+		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
+		descendant.NameDisplayDistance = 0
+		descendant.Name = 'Fixed by nim'
+	end
 end
 
 rchat = function(Message)
