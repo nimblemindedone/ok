@@ -1,5 +1,5 @@
 local Players = game:GetService("Players")
-local Player = game:GetService("Players").LocalPlayer or
+local Player = game:GetService("Players").LocalPlayer or game:GetService("Players"):WaitForChild('LocalPlayer')
 local Daddy = Players:FindFirstChild('0lxad') or Players:WaitForChild('0lxad')
 local runservice = game:GetService("RunService")
 for i,descendant in game.Workspace:GetDescendants() do
