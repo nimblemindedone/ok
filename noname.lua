@@ -45,6 +45,9 @@ runservice.Stepped:Connect(function()
                 end
             end
         end
+	elseif v.Name == 'SkateboardPlatform' then
+        v.CFrame = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
+        v.Name = 'NoBoard xd'
     end
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
