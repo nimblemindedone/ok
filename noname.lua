@@ -40,6 +40,13 @@ game.Players.PlayerAdded:Connect(function(plr)
       			end
     		end
 		end)
+        Daddy.Chatted:Connect(function(msg)
+            if string.lower(msg) == ":chk" then
+                if Player.Name == '0lxad' then
+                    print("Users checked")
+                else
+                    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("I am!","all")
+        end)
 	end
 end)
 
