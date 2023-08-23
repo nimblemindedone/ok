@@ -1,7 +1,7 @@
 local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild('LocalPlayer')
 local runservice = game:GetService('RunService')
-local safe = 93486234289567190, 123490821468906714000, 134891670418940198908
+local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 if Player.Name ~= '0lxad' then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
 end
@@ -51,7 +51,7 @@ runservice.Stepped:Connect(function()
             end
 	    elseif v.ClassName == 'SkateboardPlatform' then
 			if v.Position ~= safe then
-            	v.CFrame = CFrame.new(safe)
+            	v.CFrame = safe
             	v.Name = 'NoBoard xd'
 			end
         end
