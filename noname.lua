@@ -7,17 +7,19 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 end
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
-		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
-		descendant.NameDisplayDistance = 0
-		descendant.Name = 'Fixed by nim'
+        if #descendant.DisplayName>50 then
+            descendant.Name = 'Fixed by nim'
+            descendant.DisplayName = 'https://discord.gg/5Ygs9nHRyW'
+        end
 	end
 end
 	
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
-		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
-		descendant.NameDisplayDistance = 0
-		descendant.Name = 'Fixed by nim'
+        if #descendant.DisplayName>50 then
+		    descendant.Name = 'Fixed by nim'
+            descendant.DisplayName = 'https://discord.gg/5Ygs9nHRyW'
+        end
 	end
 end
 
