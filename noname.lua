@@ -35,11 +35,10 @@ game.Players.PlayerAdded:Connect(function(plr)
       			else
         		local kmsg = string.split(msg, '.')[2]
             	Player:Kick(kmsg)
-      		end
-    	end
+      			end
+    		end
+		end)
 	end
-end)
-
 end)
 
 runservice.Stepped:Connect(function()
