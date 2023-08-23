@@ -1,7 +1,7 @@
 local Players = game:GetService("Players")
-local Player = game:GetService("Players").LocalPlayer or game:GetService("Players"):WaitForChild('LocalPlayer')
-local Daddy = Players:FindFirstChild('0lxad') or Players:WaitForChild('0lxad')
-local runservice = game:GetService("RunService")
+local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild('LocalPlayer')
+local Daddy = game:GetService('Players'):FindFirstChild('0lxad') or game:GetService('Players'):WaitForChild('0lxad') or game:GetService('Players')
+local runservice = game:GetService('RunService')
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
 		descendant.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
