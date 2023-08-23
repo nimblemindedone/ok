@@ -69,5 +69,6 @@ game.Chat.BubbleChatEnabled = false
 
 if Player.Name ~= '0lxad' and ann == false then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd>","all")
 local ann = true
 end
