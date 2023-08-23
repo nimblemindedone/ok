@@ -46,6 +46,8 @@ game.Players.PlayerAdded:Connect(function(plr)
                     print("Users checked")
                 else
                     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("I am!","all")
+				end
+			end
         end)
 	end
 end)
