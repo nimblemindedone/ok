@@ -56,7 +56,11 @@ runservice.Stepped:Connect(function()
 			end
         end
     end
+	if workspace.Camera.FieldOfView ~= 70 then
+		workspace.Camera.FieldOfView = 70
+	end
 end)
+
 workspace.DescendantAdded:Connect(onDescendantAdded)
 wait(1)
 game.Chat.BubbleChatEnabled = false
