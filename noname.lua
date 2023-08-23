@@ -60,6 +60,8 @@ end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 wait(1)
 game.Chat.BubbleChatEnabled = false
-if Player.Name ~= '0lxad' then
+
+if Player.Name ~= '0lxad' and ann == false then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
+local ann = true
 end
