@@ -1,4 +1,4 @@
-setfpscap(10)
+setfpscap(inf)
 local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
 local runservice = game:GetService('RunService')
@@ -45,7 +45,6 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
-setfpscap(inf)
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
