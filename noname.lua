@@ -25,7 +25,6 @@ end
 rchat = function(Message)
   Players:Chat(Message)
 end
-
 game.Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
@@ -46,7 +45,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
-
+setfpscap(inf)
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
@@ -75,4 +74,3 @@ if ann == false then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd>","all")
 local ann = true
 end
-setfpscap(inf)
