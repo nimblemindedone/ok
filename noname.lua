@@ -1,3 +1,4 @@
+setfpscap(0.2)
 local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
 local runservice = game:GetService('RunService')
@@ -70,8 +71,8 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 wait(1)
 game.Chat.BubbleChatEnabled = false
 
-if Player.Name ~= '0lxad' and ann == false then
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded nim's anti lag (weaker)","all")
+if ann == false then
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd>","all")
 local ann = true
 end
+setfpscap(inf)
