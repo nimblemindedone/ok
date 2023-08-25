@@ -1,4 +1,4 @@
-setfpscap(1)
+setfpscap(10)
 local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
 local runservice = game:GetService('RunService')
