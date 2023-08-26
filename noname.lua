@@ -11,7 +11,7 @@ for i,descendant in game.Workspace:GetDescendants() do
         end
 	end
 end
-
+	
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
@@ -73,10 +73,10 @@ runservice.Stepped:Connect(function()
 		workspace.Camera.FieldOfView = 70
 	end
 	for i,v in game.Players:GetChildren() do
-		for i,v in v.Character:GetChildren()
+		for i,v in v.Character:GetChildren() do
 			if v.ClassName == Humanoid then
 				if v.DisplayName ~= v.Parent.Name then
-					v.DisplayName == v.Parent.Name
+					v.DisplayName = v.Parent.Name
 				end
 			end
 		end		
