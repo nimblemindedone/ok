@@ -72,13 +72,4 @@ runservice.Stepped:Connect(function()
 	if workspace.Camera.FieldOfView ~= 70 then
 		workspace.Camera.FieldOfView = 70
 	end
-	for _,v in game.Players:GetChildren() do
-		for _,f in v.Character:GetChildren() do
-			if f.ClassName == Humanoid then
-				if f.DisplayName ~= f.Parent.Name then
-					f.DisplayName = f.Parent.Name
-				end
-			end
-		end		
-	end
 end)
