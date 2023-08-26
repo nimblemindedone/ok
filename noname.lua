@@ -11,7 +11,7 @@ for i,descendant in game.Workspace:GetDescendants() do
         end
 	end
 end
-	
+
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
