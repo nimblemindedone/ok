@@ -2,7 +2,6 @@ local Players = game:GetService("Players")
 local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag","all")
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
@@ -24,6 +23,14 @@ end
 rchat = function(Message)
   Players:Chat(Message)
 end
+
+if ann == false then
+local ann = true
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd>","all")
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag","all")
+local ann = true
+end
+
 game.Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
@@ -44,6 +51,8 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
+workspace.DescendantAdded:Connect(onDescendantAdded)
+game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' then
@@ -63,12 +72,3 @@ runservice.Stepped:Connect(function()
 		workspace.Camera.FieldOfView = 70
 	end
 end)
-
-workspace.DescendantAdded:Connect(onDescendantAdded)
-wait(1)
-game.Chat.BubbleChatEnabled = false
-
-if ann == false then
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd>","all")
-local ann = true
-end
