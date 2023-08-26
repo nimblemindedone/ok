@@ -15,7 +15,7 @@ end
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-		    descendant.Name = 'Fixed by Omega'
+		    descendant.Ndddddddddddame = 'Fixed by Omega'
             descendant.DisplayName = 'made by fiji#0'
         end
 	end
@@ -56,7 +56,7 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
-        if v.Name=='Mesh' or v.Name=='SpecialMesh' then
+        if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
                 if not v:IsDescendantOf(Workspace.SecureParts) then
                     v:Destroy()
