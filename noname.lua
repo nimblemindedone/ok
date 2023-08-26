@@ -73,8 +73,12 @@ runservice.Stepped:Connect(function()
 		workspace.Camera.FieldOfView = 70
 	end
 	for i,v in game.Players:GetChildren() do
-		if v.Character:FindFirstChild('Fixed by Omega').DisplayName ~= v.Name then
-			v.Character:FindFirstChild('Fixed by Omega').DisplayName = v.Name
-		end
+		for i,v in v.Character:GetChildren()
+			if v.ClassName == Humanoid then
+				if v.DisplayName ~= v.Parent.Name then
+					v.DisplayName == v.Parent.Name
+				end
+			end
+		end		
 	end
 end)
