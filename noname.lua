@@ -56,7 +56,7 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
-        if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' then
+        if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
                 if not v:IsDescendantOf(Workspace.SecureParts) then
                     v:Destroy()
