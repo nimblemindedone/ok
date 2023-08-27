@@ -1,4 +1,4 @@
-repeat wait until game:IsLoaded()
+repeat wait() until game:IsLoaded()
 local Players = game.Players
 local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
