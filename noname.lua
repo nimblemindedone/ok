@@ -63,6 +63,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
+
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
