@@ -57,13 +57,6 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
-game.Players.ChildAdded:Connect(function(plr)
-plr.Character.Humanoid:GetPropertyChangedSignal("DisplayName"):Connect(function()
-	if #plr.Character.Humanoid.DisplayName>50 then
-		plr.Character.Humanoid.DisplayName = 'made by 0megaa.#0'
-	end
-end)
-end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
@@ -83,5 +76,12 @@ runservice.Stepped:Connect(function()
     end
 	if workspace.Camera.FieldOfView ~= 70 then
 		workspace.Camera.FieldOfView = 70
+	end
+	for i,v in game.Players:GetChildren() do
+		if v:FindFirstChild('Character') and v.Character:FindFirstChild('Humanoid') then
+			if v.Character.Humanoid.DisplayName ~= v.Name then
+				v.Character.Humanoid.DisplayName = v.Name
+			end
+		end
 	end
 end)
