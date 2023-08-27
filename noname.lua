@@ -59,6 +59,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
+coroutine.wrap(function()
 runservice.PostSimulation:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
@@ -78,3 +79,13 @@ runservice.PostSimulation:Connect(function()
 		workspace.Camera.FieldOfView = 70
 	end
 end)
+end)()
+
+coroutine.wrap(function()
+while wait(0.7) do
+	for i,v in Players do 
+		if v:FindFirstChild('Character') and v.Character:FindFirstChild('Humanoid') then 
+			v.Character.Humanoid.DisplayName = v.Name
+		end
+	end
+end)()
