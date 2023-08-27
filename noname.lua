@@ -29,13 +29,15 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag","all")
 local ann = true
 end
-for i,v in game.Players:GetChildren() do
+for i,v in pairs(game.Players:GetChildren()) do
+	if v:IsA("Player") then
 	local signal = v.Character.Humanoid:GetPropertyChangedSignal("DisplayName")
 	signal:Connect(function()
 		if #v.Character.Humanoid.DisplayName>50 then
 			v.Character.Humanoid.DisplayName = 'made by 0megaa.#0'
 		end
 	end)
+	end
 end
 game.Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
