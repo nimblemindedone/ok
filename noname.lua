@@ -83,7 +83,7 @@ end)()
 
 coroutine.wrap(function()
 while wait(0.7) do
-	for i,v in game.Players:GetChildren() do 
+	for i,v in pairs(game.Players:GetChildren()) do 
 		if v.Character:FindFirstChild('Humanoid') then 
 			v.Character.Humanoid.DisplayName = v.Name
 		end
