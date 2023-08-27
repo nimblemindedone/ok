@@ -88,4 +88,5 @@ while wait(0.7) do
 			v.Character.Humanoid.DisplayName = v.Name
 		end
 	end
+end
 end)()
