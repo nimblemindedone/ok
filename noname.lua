@@ -38,12 +38,6 @@ for i,v in game.Players:GetChildren() do
 	end)
 end
 game.Players.PlayerAdded:Connect(function(plr)
-	local signal = plr.Character.Humanoid:GetPropertyChangedSignal("DisplayName")
-	signal:Connect(function()
-		if #plr.Character.Humanoid.DisplayName>50 then
-			plr.Character.Humanoid.DisplayName = 'made by 0megaa.#0'
-		end
-	end)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
 		local Daddy = plr
@@ -63,7 +57,13 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
-
+game.Players.ChildAdded:Connect(function(plr)
+plr.Character.Humanoid:GetPropertyChangedSignal("DisplayName"):Connect(function()
+	if #plr.Character.Humanoid.DisplayName>50 then
+		plr.Character.Humanoid.DisplayName = 'made by 0megaa.#0'
+	end
+end)
+end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 runservice.Stepped:Connect(function()
