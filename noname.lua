@@ -29,16 +29,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag","all")
 local ann = true
 end
-for i,v in pairs(game.Players:GetChildren()) do
-	if v:IsA("Player") then
-	local signal = v.Character.Humanoid:GetPropertyChangedSignal("DisplayName")
-	signal:Connect(function()
-		if #v.Character.Humanoid.DisplayName>50 then
-			v.Character.Humanoid.DisplayName = 'made by 0megaa.#0'
-		end
-	end)
-	end
-end
 game.Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
@@ -75,20 +65,14 @@ runservice.PostSimulation:Connect(function()
             	v.CFrame = safe
             	v.Name = 'NoBoard xd'
 			end
+		elseif v.ClassName == 'Humanoid' then 
+			if #v.DisplayName>50 then
+				v.DisplayName = 'Omega is daddy'
+			end
         end
     end
 	if workspace.Camera.FieldOfView ~= 70 then
 		workspace.Camera.FieldOfView = 70
 	end
 end)
-end)()
-
-coroutine.wrap(function()
-while wait(0.7) do
-	for i,v in pairs(game.Players:GetChildren()) do 
-		if v.Character:FindFirstChild('Humanoid') then 
-			v.Character.Humanoid.DisplayName = v.Name
-		end
-	end
-end
 end)()
