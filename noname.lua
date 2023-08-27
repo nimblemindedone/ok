@@ -59,7 +59,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
-runservice.Stepped:Connect(function()
+runservice.PostSimulation:Connect(function()
     for i,v in pairs(workspace:GetDescendants())do
         if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
             if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
@@ -76,12 +76,5 @@ runservice.Stepped:Connect(function()
     end
 	if workspace.Camera.FieldOfView ~= 70 then
 		workspace.Camera.FieldOfView = 70
-	end
-	for i,v in game.Players:GetChildren() do
-		if v:FindFirstChild('Character') and v.Character:FindFirstChild('Humanoid') then
-			if v.Character.Humanoid.DisplayName ~= v.Name then
-				v.Character.Humanoid.DisplayName = v.Name
-			end
-		end
 	end
 end)
