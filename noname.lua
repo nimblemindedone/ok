@@ -1,5 +1,5 @@
 local Players = game.Players
-local Player = game.Players.LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
+local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
