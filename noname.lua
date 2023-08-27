@@ -1,5 +1,5 @@
-local Players = game:GetService("Players")
-local Player = game:GetService('Players').LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
+local Players = game.Players
+local Player = game.Players.LocalPlayer or game:GetService('Players'):WaitForChild(LocalPlayer)
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
@@ -83,7 +83,7 @@ end)()
 
 coroutine.wrap(function()
 while wait(0.7) do
-	for i,v in Players:GetChildren() do 
+	for i,v in game.Players:GetChildren() do 
 		if v.Character:FindFirstChild('Humanoid') then 
 			v.Character.Humanoid.DisplayName = v.Name
 		end
