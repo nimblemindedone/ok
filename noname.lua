@@ -83,7 +83,7 @@ local function onDescendantAdded(descendant)
         end)
     end
     if descendant.ClassName == 'Part' then
-    unhinge(descendant)
+        unhinge(descendant)
     end
 end
 
