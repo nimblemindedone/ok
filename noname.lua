@@ -3,6 +3,9 @@ local Players = game.Players
 local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
+function say(Message)
+    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
+end
 
 if _G.ann == false then
 _G.ann = true
@@ -27,10 +30,6 @@ elseif v.TopSurface == Enum.SurfaceType.Hinge then
     v.TopSurface = Enum.SurfaceType.Smooth
 end
 end)()
-end
-
-function say(Message)
-    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
 end
 
 coroutine.wrap(function()
