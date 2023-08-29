@@ -25,15 +25,15 @@ end
 coroutine.wrap(function()
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
-        if #descendant.DisplayName>50 then
-            descendant.DisplayName = 'made by 0megaa.#0'
-        end
         descendant:GetPropertyChangedSignal('DisplayName'):Connect(function()
 	    task.wait()
             if #descendant.DisplayName>50 then
                 descendant.DisplayName = 'Omega is daddy'
             end
         end)
+        if #descendant.DisplayName>50 then
+            descendant.DisplayName = 'made by 0megaa.#0'
+        end
     elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
@@ -127,3 +127,4 @@ game.Chat.BubbleChatEnabled = false
 
 say('1ucd is better')
 say("Loaded Omega's anti lag")
+
