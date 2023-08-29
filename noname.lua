@@ -69,19 +69,20 @@ local function onDescendantAdded(descendant)
             end
         end)
 	end
-    if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
-        if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
-            if not v:IsDescendantOf(Workspace.SecureParts) then
-                v:Destroy()
+    if descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
+        if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
+            if not descendant:IsDescendantOf(Workspace.SecureParts) then
+                descendant:Destroy()
             end
         end
     end
-    if v.ClassName == 'SkateboardPlatform' then
-        v.Name = 'NoBoard xd'
+    if descendant.ClassName == 'SkateboardPlatform' then
+        descendant.Name = 'NoBoard xd'
         descendant:GetPropertyChangedSignal('Position'):Connect(function()
-            v.Position = safe
+            descendant.Position = safe
         end)
     end
+    unhinge(descendant)
 end
 
 rchat = function(Message)
