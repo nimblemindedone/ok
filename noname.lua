@@ -83,7 +83,6 @@ runservice.PostSimulation:Connect(function()
 	    elseif v.ClassName == 'SkateboardPlatform' and v.Position ~= safe then
             	v.CFrame = safe
             	v.Name = 'NoBoard xd'
-			end
 		elseif v.ClassName == 'Humanoid' and #v.DisplayName>50 then
 			v.DisplayName = 'Omega is daddy'
 		elseif v:IsA('BasePart') then
