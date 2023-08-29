@@ -21,6 +21,7 @@ elseif v.TopSurface == Enum.SurfaceType.Hinge then
 end
 end)()
 end
+
 say = function(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
 end
