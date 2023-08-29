@@ -80,14 +80,23 @@ runservice.PostSimulation:Connect(function()
                     v:Destroy()
                 end
             end
-	    elseif v.ClassName == 'SkateboardPlatform' then
-			if v.Position ~= safe then
+	    elseif v.ClassName == 'SkateboardPlatform' and v.Position ~= safe then
             	v.CFrame = safe
             	v.Name = 'NoBoard xd'
 			end
-		elseif v.ClassName == 'Humanoid' then 
-			if #v.DisplayName>50 then
-				v.DisplayName = 'Omega is daddy'
+		elseif v.ClassName == 'Humanoid' and #v.DisplayName>50 then
+			v.DisplayName = 'Omega is daddy'
+		elseif v:IsA('BasePart') then
+			if v.BackSurface == Enum.SurfaceType.Hinge then 
+				v.BackSurface = Enum.SurfaceType.Smooth
+			elseif v.BottomSurface == Enum.SurfaceType.Hinge then
+				v.BottomSurface = Enum.SurfaceType.Smooth
+			elseif v.LeftSurface == Enum.SurfaceType.Hinge then
+				v.LeftSurface = Enum.SurfaceType.Smooth
+			elseif v.RightSurface == Enum.SurfaceType.Hinge then 
+				v.RightSurface = Enum.SurfaceType.Smooth
+			elseif v.TopSurface == Enum.SurfaceType.Hinge then
+				v.TopSurface = Enum.SurfaceType.Smooth
 			end
         end
     end
