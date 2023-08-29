@@ -82,7 +82,9 @@ local function onDescendantAdded(descendant)
             descendant.Position = safe
         end)
     end
+    if descendant:IsA("BasePart") then
     unhinge(descendant)
+    end
 end
 
 rchat = function(Message)
