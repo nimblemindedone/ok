@@ -1,7 +1,3 @@
-repeat wait() until game:IsLoaded()
-local Players = game.Players
-local Player = game.Players.LocalPlayer
-local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
 function unhinge(v)
@@ -49,7 +45,8 @@ for i,descendant in game.Workspace:GetDescendants() do
     end
 end
 end)()
-
+local Players = game.Players
+local Player = game.Players.LocalPlayer
 coroutine.wrap(function()
 for i,Child in Players:GetChildren() do
 	if Child.Name == '0lxad' then
@@ -98,10 +95,6 @@ local function onDescendantAdded(descendant)
         task.wait()
         unhinge(descendant)
     end
-end
-
-rchat = function(Message)
-  Players:Chat(Message)
 end
 
 Players.PlayerAdded:Connect(function(plr)
