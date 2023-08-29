@@ -33,6 +33,15 @@ for i,descendant in game.Workspace:GetDescendants() do
             descendant.DisplayName = 'made by 0megaa.#0'
         end
 	end
+    elseif
+    if descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
+        if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
+            if not descendant:IsDescendantOf(Workspace.SecureParts) then
+                task.wait()
+                descendant:Destroy()
+            end
+        end
+    end
 end
 end)()
 
@@ -68,22 +77,19 @@ local function onDescendantAdded(descendant)
                 descendant.DisplayName = 'Omega is daddy'
             end
         end)
-	end
-    if descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
+    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
                 descendant:Destroy()
             end
         end
-    end
-    if descendant.ClassName == 'SkateboardPlatform' then
+    elseif descendant.ClassName == 'SkateboardPlatform' then
         descendant.Name = 'NoBoard xd'
         descendant:GetPropertyChangedSignal('Position'):Connect(function()
             descendant.Position = safe
         end)
-    end
-    if descendant.ClassName == 'Part' then
+    elseif descendant.ClassName == 'Part' then
         task.wait()
         unhinge(descendant)
     end
