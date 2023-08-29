@@ -29,7 +29,7 @@ end
 end)()
 end
 
-say = function(Message)
+function say(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
 end
 
