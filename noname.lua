@@ -34,7 +34,6 @@ for i,descendant in game.Workspace:GetDescendants() do
                 descendant.DisplayName = 'Omega is daddy'
             end
         end)
-	end
     elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
