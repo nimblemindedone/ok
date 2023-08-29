@@ -3,7 +3,14 @@ local Players = game.Players
 local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
-local ann = false
+
+if _G.ann == false then
+_G.ann = true
+say('1ucd is better')
+say("Loaded Omega's anti lag")
+_G.ann = true
+end
+
 function unhinge(v)
 coroutine.wrap(function()
 if v.BackSurface == Enum.SurfaceType.Hinge then 
@@ -120,10 +127,3 @@ end)
 
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
-
-if _G.ann == false then
-_G.ann = true
-say('1ucd is better')
-say("Loaded Omega's anti lag")
-_G.ann = true
-end
