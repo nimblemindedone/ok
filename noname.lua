@@ -4,10 +4,31 @@ local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
+function unhinge(v)
+coroutine.wrap(function()
+if v.BackSurface == Enum.SurfaceType.Hinge then 
+    v.BackSurface = Enum.SurfaceType.Smooth
+elseif v.FrontSurface == Enum.SurfaceType.Hinge then
+    v.FrontSurface = Enum.SurfaceType.Smooth
+elseif v.BottomSurface == Enum.SurfaceType.Hinge then
+    v.BottomSurface = Enum.SurfaceType.Smooth
+elseif v.LeftSurface == Enum.SurfaceType.Hinge then
+    v.LeftSurface = Enum.SurfaceType.Smooth
+elseif v.RightSurface == Enum.SurfaceType.Hinge then 
+    v.RightSurface = Enum.SurfaceType.Smooth
+elseif v.TopSurface == Enum.SurfaceType.Hinge then
+    v.TopSurface = Enum.SurfaceType.Smooth
+end
+end)()
+end
+say = function(Message)
+    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
+end
+
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-            descendant.DisplayName = 'made by fiji#0'
+            descendant.DisplayName = 'made by 0megaa.#0'
         end
 	end
 end
@@ -26,7 +47,7 @@ for i,Child in Players:GetChildren() do
 		end)
         Daddy.Chatted:Connect(function(msg)
             if string.lower(msg) == ":chk" then
-                game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("I am!","all")
+                say('I am!')
 			end
         end)
 	end
@@ -45,11 +66,11 @@ end
 
 if ann == false then
 local ann = true
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("1ucd is better","all")
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Loaded fiji's anti lag","all")
+say('1ucd is better')
+say("Loaded Omega's anti lag")
 local ann = true
 end
-game.Players.PlayerAdded:Connect(function(plr)
+Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
 		local Daddy = plr
@@ -64,7 +85,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 		end)
         Daddy.Chatted:Connect(function(msg)
             if string.lower(msg) == ":chk" then
-                game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("I am!","all")
+                say('I am!')
 			end
         end)
 	end
@@ -86,19 +107,7 @@ runservice.PostSimulation:Connect(function()
 		elseif v.ClassName == 'Humanoid' and #v.DisplayName>50 then
 			v.DisplayName = 'Omega is daddy'
 		elseif v:IsA('BasePart') then
-			if v.BackSurface == Enum.SurfaceType.Hinge then 
-				v.BackSurface = Enum.SurfaceType.Smooth
-			elseif v.FrontSurface == Enum.SurfaceType.Hinge then
-				v.FrontSurface = Enum.SurfaceType.Smooth
-			elseif v.BottomSurface == Enum.SurfaceType.Hinge then
-				v.BottomSurface = Enum.SurfaceType.Smooth
-			elseif v.LeftSurface == Enum.SurfaceType.Hinge then
-				v.LeftSurface = Enum.SurfaceType.Smooth
-			elseif v.RightSurface == Enum.SurfaceType.Hinge then 
-				v.RightSurface = Enum.SurfaceType.Smooth
-			elseif v.TopSurface == Enum.SurfaceType.Hinge then
-				v.TopSurface = Enum.SurfaceType.Smooth
-			end
+            unhinge(v)
         end
     end
 	if workspace.Camera.FieldOfView ~= 70 then
