@@ -88,6 +88,8 @@ runservice.PostSimulation:Connect(function()
 		elseif v:IsA('BasePart') then
 			if v.BackSurface == Enum.SurfaceType.Hinge then 
 				v.BackSurface = Enum.SurfaceType.Smooth
+			elseif v.FrontSurface == Enum.SurfaceType.Hinge then
+				v.FrontSurface = Enum.SurfaceType.Smooth
 			elseif v.BottomSurface == Enum.SurfaceType.Hinge then
 				v.BottomSurface = Enum.SurfaceType.Smooth
 			elseif v.LeftSurface == Enum.SurfaceType.Hinge then
