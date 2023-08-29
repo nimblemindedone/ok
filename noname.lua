@@ -121,9 +121,8 @@ workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
         workspace.Camera.FieldOfView = 70
     end
 end)
-
-workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
+workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say('1ucd is better')
 say("Loaded Omega's anti lag")
