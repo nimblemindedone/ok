@@ -89,12 +89,6 @@ rchat = function(Message)
   Players:Chat(Message)
 end
 
-if ann == false then
-local ann = true
-say('1ucd is better')
-say("Loaded Omega's anti lag")
-local ann = true
-end
 Players.PlayerAdded:Connect(function(plr)
 	if plr.Name == '0lxad' then
 		print("Daddy found!")
@@ -124,3 +118,10 @@ if workspace.Camera.FieldOfView ~= 70 then
 end
 end)()
 end)()
+
+if _G.ann == false then
+_G.ann = true
+say('1ucd is better')
+say("Loaded Omega's anti lag")
+_G.ann = true
+end
