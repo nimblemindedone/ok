@@ -82,7 +82,7 @@ local function onDescendantAdded(descendant)
             descendant.Position = safe
         end)
     end
-    if descendant:IsA("BasePart") then
+    if descendant.ClassName == 'Part' then
     unhinge(descendant)
     end
 end
