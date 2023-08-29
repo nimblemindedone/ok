@@ -26,6 +26,7 @@ say = function(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
 end
 
+coroutine.wrap(function()
 for i,descendant in game.Workspace:GetDescendants() do
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
@@ -33,6 +34,9 @@ for i,descendant in game.Workspace:GetDescendants() do
         end
 	end
 end
+end)()
+
+coroutine.wrap(function()
 for i,Child in Players:GetChildren() do
 	if Child.Name == '0lxad' then
 		print("Daddy found!")
@@ -53,12 +57,31 @@ for i,Child in Players:GetChildren() do
         end)
 	end
 end
+end)()
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-            descendant.DisplayName = 'made by fiji#0'
+            descendant.DisplayName = 'made by afvk#0'
         end
+        descendant:GetPropertyChangedSignal('DisplayName'):Connect(function()
+            if #descendant.DisplayName>50 then
+                descendant.DisplayName = 'Omega is daddy'
+            end
+        end)
 	end
+    if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
+        if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
+            if not v:IsDescendantOf(Workspace.SecureParts) then
+                v:Destroy()
+            end
+        end
+    end
+    if v.ClassName == 'SkateboardPlatform' then
+        v.Name = 'NoBoard xd'
+        descendant:GetPropertyChangedSignal('Position'):Connect(function()
+            v.Position = safe
+        end)
+    end
 end
 
 rchat = function(Message)
@@ -95,24 +118,8 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
 coroutine.wrap(function()
 runservice.PostSimulation:Connect(function()
-    for i,v in pairs(workspace:GetDescendants())do
-        if v.Name=='Mesh' or v.Name=='SpecialMesh' or v.ClassName=='ParticleEmitter' or v.ClassName=='Smoke' then
-            if v.Parent.Name~='Head' and v.Parent.Name~='Handle' then
-                if not v:IsDescendantOf(Workspace.SecureParts) then
-                    v:Destroy()
-                end
-            end
-	    elseif v.ClassName == 'SkateboardPlatform' and v.Position ~= safe then
-            	v.CFrame = safe
-            	v.Name = 'NoBoard xd'
-		elseif v.ClassName == 'Humanoid' and #v.DisplayName>50 then
-			v.DisplayName = 'Omega is daddy'
-		elseif v:IsA('BasePart') then
-            unhinge(v)
-        end
-    end
-	if workspace.Camera.FieldOfView ~= 70 then
-		workspace.Camera.FieldOfView = 70
-	end
-end)
+if workspace.Camera.FieldOfView ~= 70 then
+	workspace.Camera.FieldOfView = 70
+end
+end)()
 end)()
