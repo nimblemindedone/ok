@@ -33,6 +33,7 @@ for i,descendant in game.Workspace:GetDescendants() do
             descendant.DisplayName = 'made by 0megaa.#0'
         end
         descendant:GetPropertyChangedSignal('DisplayName'):Connect(function()
+	    task.wait()
             if #descendant.DisplayName>50 then
                 descendant.DisplayName = 'Omega is daddy'
             end
