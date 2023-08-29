@@ -72,6 +72,7 @@ local function onDescendantAdded(descendant)
     if descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
+                task.wait()
                 descendant:Destroy()
             end
         end
