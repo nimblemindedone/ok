@@ -3,17 +3,7 @@ local Players = game.Players
 local Player = game.Players.LocalPlayer
 local runservice = game:GetService('RunService')
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
-function say(Message)
-    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
-end
-
-if _G.ann == false then
-_G.ann = true
-say('1ucd is better')
-say("Loaded Omega's anti lag")
-_G.ann = true
-end
-
+local ann = false
 function unhinge(v)
 coroutine.wrap(function()
 if v.BackSurface == Enum.SurfaceType.Hinge then 
@@ -30,6 +20,10 @@ elseif v.TopSurface == Enum.SurfaceType.Hinge then
     v.TopSurface = Enum.SurfaceType.Smooth
 end
 end)()
+end
+
+say = function(Message)
+    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
 end
 
 coroutine.wrap(function()
@@ -90,6 +84,7 @@ local function onDescendantAdded(descendant)
         end)
     end
     if descendant.ClassName == 'Part' then
+        task.wait()
         unhinge(descendant)
     end
 end
@@ -126,3 +121,6 @@ end)
 
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
+
+say('1ucd is better')
+say("Loaded Omega's anti lag")
