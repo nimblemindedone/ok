@@ -34,7 +34,7 @@ for i,descendant in game.Workspace:GetDescendants() do
         if #descendant.DisplayName>50 then
             descendant.DisplayName = 'made by 0megaa.#0'
         end
-    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
+    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
@@ -78,7 +78,7 @@ local function onDescendantAdded(descendant)
                 descendant.DisplayName = 'Omega is daddy'
             end
         end)
-    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' then
+    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
