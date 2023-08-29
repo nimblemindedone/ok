@@ -23,7 +23,7 @@ end)()
 end
 
 say = function(Message)
-    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer((Message),"all")
+    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(Message,"all")
 end
 
 coroutine.wrap(function()
