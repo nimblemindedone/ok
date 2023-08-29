@@ -112,15 +112,14 @@ Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
+workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
+    if workspace.Camera.FieldOfView ~= 70 then
+        workspace.Camera.FieldOfView = 70
+    end
+end)
+
 workspace.DescendantAdded:Connect(onDescendantAdded)
 game.Chat.BubbleChatEnabled = false
-coroutine.wrap(function()
-runservice.PostSimulation:Connect(function()
-if workspace.Camera.FieldOfView ~= 70 then
-	workspace.Camera.FieldOfView = 70
-end
-end)()
-end)()
 
 if _G.ann == false then
 _G.ann = true
