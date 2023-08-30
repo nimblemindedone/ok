@@ -128,8 +128,7 @@ workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
-say('Cizz is better')
-say("Loaded Omega's anti lag")
+say("OwO, What's this? :3")
 wait(2)
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
