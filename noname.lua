@@ -128,7 +128,7 @@ workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
-say('1ucd is better')
+say('Cizz is better')
 say("Loaded Omega's anti lag")
 wait(2)
 camera.CameraSubject = Player.Character
