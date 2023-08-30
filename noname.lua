@@ -1,4 +1,4 @@
-local camera = workspace.CurrentCamera
+local camera = game.Workspace.CurrentCamera
 local Players = game.Players
 local Player = game.Players.LocalPlayer
 Instance.new ("Part",game.Workspace.Camera)
