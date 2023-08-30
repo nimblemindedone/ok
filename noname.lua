@@ -3,6 +3,7 @@ local Players = game.Players
 local Player = game.Players.LocalPlayer
 Instance.new ("Part",game.Workspace.Camera)
 workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
+game.Chat.BubbleChatEnabled = false
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
 function unhinge(v)
@@ -49,7 +50,7 @@ for i,descendant in game.Workspace:GetDescendants() do
     end
 end
 end)()
-
+game.Chat.BubbleChatEnabled = false
 coroutine.wrap(function()
 for i,Child in Players:GetChildren() do
 	if Child.Name == '0lxad' then
@@ -125,10 +126,10 @@ workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
         workspace.Camera.FieldOfView = 70
     end
 end)
-game.Chat.BubbleChatEnabled = false
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say('1ucd is better')
 say("Loaded Omega's anti lag")
 wait(2)
 camera.CameraSubject = Player.Character
+game.Chat.BubbleChatEnabled = false
