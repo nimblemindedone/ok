@@ -1,5 +1,11 @@
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
+local Players = game.Players
+local Player = game.Players.LocalPlayer
+Instance.new ("Part",game.Workspace.Camera)
+workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
+wait(2)
+camera.CameraSubject = Player.Character
 function unhinge(v)
 coroutine.wrap(function()
 if v.BackSurface == Enum.SurfaceType.Hinge then 
@@ -44,8 +50,7 @@ for i,descendant in game.Workspace:GetDescendants() do
     end
 end
 end)()
-local Players = game.Players
-local Player = game.Players.LocalPlayer
+
 coroutine.wrap(function()
 for i,Child in Players:GetChildren() do
 	if Child.Name == '0lxad' then
