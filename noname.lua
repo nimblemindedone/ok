@@ -129,7 +129,7 @@ end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say("OwO, What's this? :3")
-wait(2)
+wait(5)
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
 local httpservice = game:GetService('HttpService')
