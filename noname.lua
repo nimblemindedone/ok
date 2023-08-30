@@ -1,11 +1,10 @@
-local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
-local ann = false
+local camera = workspace.CurrentCamera
 local Players = game.Players
 local Player = game.Players.LocalPlayer
 Instance.new ("Part",game.Workspace.Camera)
 workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
-wait(2)
-camera.CameraSubject = Player.Character
+local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
+local ann = false
 function unhinge(v)
 coroutine.wrap(function()
 if v.BackSurface == Enum.SurfaceType.Hinge then 
@@ -131,4 +130,5 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say('1ucd is better')
 say("Loaded Omega's anti lag")
-
+wait(2)
+camera.CameraSubject = Player.Character
