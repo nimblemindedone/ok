@@ -166,7 +166,7 @@ Tab:Toggle{
 		end
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
-			Text = ("Anti-Freeze", state),
+			Text = ("Anti-Freeze "..tostring(state)),
 			Duration = 8,
 			Callback = function() end
 		}
@@ -186,7 +186,7 @@ Tab:Toggle{
 		end
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
-			Text = ("Anti-Jail", state),
+			Text = ("Anti-Jail "..tostring(state)),
 			Duration = 8,
 			Callback = function() end
 		}
@@ -206,7 +206,7 @@ Tab:Toggle{
 		end
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
-			Text = ("Anti-Punish", state),
+			Text = ("Anti-Punish "..tostring(state)),
 			Duration = 8,
 			Callback = function() end
 		}
