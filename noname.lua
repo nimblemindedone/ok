@@ -91,7 +91,6 @@ local function onDescendantAdded(descendant)
             end
         end
     elseif descendant.ClassName == 'SkateboardPlatform' then
-        descendant.Name = 'NoBoard xd'
         descendant:GetPropertyChangedSignal('Position'):Connect(function()
             descendant.Position = safe
         end)
