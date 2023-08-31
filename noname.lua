@@ -225,7 +225,7 @@ local Tab = GUI:Tab{
 }
 
 Tab:Textbox{
-	Name = "Loadb",
+	Name = "Loadb(admin or f3x not required)",
 	Callback = function(text)
 	game:GetService("ReplicatedStorage").Network.BuildSaving:InvokeServer({"LOAD", text})
  end
