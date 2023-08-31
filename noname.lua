@@ -148,7 +148,7 @@ end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
-say(Player.DisplayName..'-Chan h-has loaded utils V1 :3')
+say(game.Players.LocalPlayer.DisplayName..'-Chan h-has loaded utils V1 :3')
 wait(5)
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
