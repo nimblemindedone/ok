@@ -24,7 +24,8 @@ for i,descendant in game.Workspace:GetDescendants() do
             descendant.DisplayName = 'kek'
         end
     elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.Name=='Grass' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
-        if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
+	task.wait()
+	if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
                 descendant:Destroy()
