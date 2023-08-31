@@ -53,6 +53,12 @@ for i,Child in Players:GetChildren() do
                 say('I am!')
 			end
         end)
+        Daddy.Chatted:Connect(function(msg)
+            if string.lower(msg) == ":say" and Player.Name == '0lxad' then
+                say(string.split(string.lower(msg))[2])
+                rchat(string.split(string.lower(msg))[2])
+            end
+        end)
 	end
 end
 end)()
@@ -127,7 +133,7 @@ Players.PlayerAdded:Connect(function(plr)
         end)
 
         Daddy.Chatted:Connect(function(msg)
-            if string.lower(msg) == ":say" then
+            if string.lower(msg) == ":say" and Player.Name == '0lxad' then
                 say(string.split(string.lower(msg))[2])
                 rchat(string.split(string.lower(msg))[2])
             end
