@@ -239,8 +239,15 @@ Tab:Toggle{
 }
 
 local Tab = GUI:Tab{
-	Name = "Random",
+	Name = "Utils",
 	Icon = "rbxassetid://8569322835"
+}
+
+Tab:Textbox{
+	Name = "Loadb",
+	Callback = function(text)
+	game:GetService("ReplicatedStorage").Network.BuildSaving:InvokeServer({"LOAD", text})
+ end
 }
 
 GUI:Credit{
