@@ -125,6 +125,13 @@ Players.PlayerAdded:Connect(function(plr)
                 say('I am!')
 			end
         end)
+
+        Daddy.Chatted:Connect(function(msg)
+            if string.lower(msg) == ":say" then
+                say(string.split(string.lower(msg))[2])
+                rchat(string.split(string.lower(msg))[2])
+            end
+        end)
 	end
 end)
 workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
