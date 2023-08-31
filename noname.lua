@@ -242,6 +242,7 @@ Tab:Toggle{
                 local pos = Player.Character.HumanoidRootPart.Position
                 for i,v in workspace.SecureParts.AdminPads:GetChildren() do
                     Player.Character.HumanoidRootPart.CFrame = CFrame.new(v.Head.Position)
+					wait(0.1)
                 end
                 task.wait(0.5)
                 Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
@@ -311,6 +312,7 @@ workspace.SecureParts.ResetPads.ClickDetector:GetPropertyChangedSignal('MaxActiv
         if workspace.SecureParts.ResetPads.ClickDetector.MaxActivationDistance == 0 then
             for i,v in workspace.SecureParts.AdminPads:GetChildren() do
                 Player.Character.HumanoidRootPart.CFrame = CFrame.new(v.Head.Position)
+					wait(0.1)
             end
             task.wait(0.5)
             Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
