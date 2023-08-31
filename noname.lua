@@ -23,7 +23,7 @@ for i,descendant in game.Workspace:GetDescendants() do
         if #descendant.DisplayName>50 then
             descendant.DisplayName = 'kek'
         end
-    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
+    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='MeshPart' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
@@ -76,7 +76,7 @@ local function onDescendantAdded(descendant)
                 descendant.DisplayName = 'Pwned by Cizz'
             end
         end)
-    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
+    elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='MeshPart' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
             if not descendant:IsDescendantOf(Workspace.SecureParts) then
                 task.wait()
@@ -147,7 +147,8 @@ workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
 end)
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
-say("OwO, What's this? :3")
+say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
+say(Player.DisplayName..'-Chan h-has loaded utils V1 :3')
 wait(5)
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
