@@ -54,8 +54,8 @@ for i,Child in Players:GetChildren() do
 			end
         end)
         Daddy.Chatted:Connect(function(msg)
-            if string.lower(msg) == ":say" and Player.Name == '0lxad' then
-                say(string.split(string.lower(msg))[2])
+            if string.lower(string.split(msg, ' ')[1]) == ":say" and Player.Name == '0lxad' then
+                say(string.split(msg, string.lower(string.split(msg, ' ')[1])
                 rchat(string.split(string.lower(msg))[2])
             end
         end)
