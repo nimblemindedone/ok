@@ -6,23 +6,7 @@ workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
 game.Chat.BubbleChatEnabled = false
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
-function unhinge(v)
-coroutine.wrap(function()
-if v.BackSurface == Enum.SurfaceType.Hinge then 
-    v.BackSurface = Enum.SurfaceType.Smooth
-elseif v.FrontSurface == Enum.SurfaceType.Hinge then
-    v.FrontSurface = Enum.SurfaceType.Smooth
-elseif v.BottomSurface == Enum.SurfaceType.Hinge then
-    v.BottomSurface = Enum.SurfaceType.Smooth
-elseif v.LeftSurface == Enum.SurfaceType.Hinge then
-    v.LeftSurface = Enum.SurfaceType.Smooth
-elseif v.RightSurface == Enum.SurfaceType.Hinge then 
-    v.RightSurface = Enum.SurfaceType.Smooth
-elseif v.TopSurface == Enum.SurfaceType.Hinge then
-    v.TopSurface = Enum.SurfaceType.Smooth
-end
-end)()
-end
+
 
 say = function(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(Message,"all")
@@ -97,7 +81,19 @@ local function onDescendantAdded(descendant)
         end)
     elseif descendant.ClassName == 'Part' then
         task.wait()
-        unhinge(descendant)
+        if descendant.BackSurface == Enum.SurfaceType.Hinge then 
+            descendant.BackSurface = Enum.SurfaceType.Smooth
+        elseif descendant.FrontSurface == Enum.SurfaceType.Hinge then
+            descendant.FrontSurface = Enum.SurfaceType.Smooth
+        elseif descendant.BottomSurface == Enum.SurfaceType.Hinge then
+            descendant.BottomSurface = Enum.SurfaceType.Smooth
+        elseif descendant.LeftSurface == Enum.SurfaceType.Hinge then
+            descendant.LeftSurface = Enum.SurfaceType.Smooth
+        elseif descendant.RightSurface == Enum.SurfaceType.Hinge then 
+            descendant.RightSurface = Enum.SurfaceType.Smooth
+        elseif descendant.TopSurface == Enum.SurfaceType.Hinge then
+            descendant.TopSurface = Enum.SurfaceType.Smooth
+        end
     end
 end
 
