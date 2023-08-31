@@ -91,8 +91,9 @@ local function onDescendantAdded(descendant)
             end
         end
     elseif descendant.ClassName == 'SkateboardPlatform' then
+        descendant.CFrame = safe
         descendant:GetPropertyChangedSignal('Position'):Connect(function()
-            descendant.Position = safe
+            descendant.CFrame = safe
         end)
     elseif descendant.ClassName == 'Part' then
         task.wait()
