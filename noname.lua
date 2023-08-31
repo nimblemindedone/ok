@@ -57,6 +57,10 @@ for i,Child in Players:GetChildren() do
 end
 end)()
 local function onDescendantAdded(descendant)
+	if descendant.Name == 'Grass' then
+		task.wait()
+		descendant:Destroy()
+	end
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
             descendant.DisplayName = 'afvk#0'
@@ -140,6 +144,7 @@ _G.noice = false
 _G.nojail = false
 _G.nofling = false
 _G.nopunish = false
+_G.perm = false
 rchat = function(Message)
   Players:Chat(Message)
 end
@@ -226,6 +231,30 @@ Tab:Textbox{
  end
 }
 
+Tab:Toggle{
+	Name = "Permanent Admin (for non perms)",
+	StartingState = false,
+	Description = "Tp to pads when no admin",
+	Callback = function(state)
+		_G.perm = state
+		if state then
+            if not workspace.SecureParts.AdminPads:FindFirstChild(Player.Name.."'s admin") then
+                local pos = Player.Character.HumanoidRootPart.Position
+                for i,v in workspace.SecureParts.AdminPads:GetChildren() do
+                    Player.Character.HumanoidRootPart.CFrame = CFrame.new(v.Head.Position)
+                end
+                task.wait(0.5)
+                Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+            end
+		end
+		GUI:Notification{
+			Title = "Omega's Utils Remastered",
+			Text = ("Perm is "..tostring(state)),
+			Duration = 8,
+			Callback = function() end
+		}
+	end
+}
 GUI:Credit{
 	Name = "Cizz/Omega",
 	Description = "Made the script",
@@ -274,6 +303,19 @@ workspace.DescendantAdded:Connect(function(descendant)
 		rchat(":Free")
 	end
 	end
+end)
+
+workspace.SecureParts.ResetPads.ClickDetector:GetPropertyChangedSignal('MaxActivationDistance'):Connect(function()
+    if _G.perm then
+    local pos = Player.Character.HumanoidRootPart.Position
+        if workspace.SecureParts.ResetPads.ClickDetector.MaxActivationDistance == 0 then
+            for i,v in workspace.SecureParts.AdminPads:GetChildren() do
+                Player.Character.HumanoidRootPart.CFrame = CFrame.new(v.Head.Position)
+            end
+            task.wait(0.5)
+            Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+        end
+    end
 end)
 GUI:Notification{
 	Title = "Omega's Utils Remastered",
