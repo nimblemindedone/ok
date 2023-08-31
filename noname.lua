@@ -7,29 +7,6 @@ game.Chat.BubbleChatEnabled = false
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
 
-coroutine.wrap(function()
-if v.BackSurface == Enum.SurfaceType.Hinge then 
-    v.BackSurface = Enum.SurfaceType.Smooth
-end
-if v.FrontSurface == Enum.SurfaceType.Hinge then
-    v.FrontSurface = Enum.SurfaceType.Smooth
-end
-if v.BottomSurface == Enum.SurfaceType.Hinge then
-    v.BottomSurface = Enum.SurfaceType.Smooth
-end
-if v.LeftSurface == Enum.SurfaceType.Hinge then
-    v.LeftSurface = Enum.SurfaceType.Smooth
-end
-if v.RightSurface == Enum.SurfaceType.Hinge then 
-    v.RightSurface = Enum.SurfaceType.Smooth
-end
-if v.TopSurface == Enum.SurfaceType.Hinge then
-    v.TopSurface = Enum.SurfaceType.Smooth
-end
-end
-end)()
-
-
 say = function(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(Message,"all")
 end
@@ -121,7 +98,6 @@ local function onDescendantAdded(descendant)
             end
             if descendant.TopSurface == Enum.SurfaceType.Hinge then
                 descendant.TopSurface = Enum.SurfaceType.Smooth
-            end
             end
         end)()
     end
