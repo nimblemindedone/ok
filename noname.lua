@@ -38,7 +38,7 @@ for i,descendant in game.Workspace:GetDescendants() do
             end
         end)
         if #descendant.DisplayName>50 then
-            descendant.DisplayName = 'made by 0megaa.#0'
+            descendant.DisplayName = 'kek'
         end
     elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
         if descendant.Parent.Name~='Head' and descendant.Parent.Name~='Handle' then
@@ -76,11 +76,11 @@ end)()
 local function onDescendantAdded(descendant)
 	if descendant.ClassName == 'Humanoid' then
         if #descendant.DisplayName>50 then
-            descendant.DisplayName = 'made by afvk#0'
+            descendant.DisplayName = 'afvk#0'
         end
         descendant:GetPropertyChangedSignal('DisplayName'):Connect(function()
             if #descendant.DisplayName>50 then
-                descendant.DisplayName = 'Omega is daddy'
+                descendant.DisplayName = 'Pwned by Cizz'
             end
         end)
     elseif descendant.Name=='Mesh' or descendant.Name=='SpecialMesh' or descendant.ClassName=='ParticleEmitter' or descendant.ClassName=='Smoke' or descendant.ClassName=='Fire' or descendant.ClassName=='Sparkles' then
@@ -155,7 +155,7 @@ local Tab = GUI:Tab{
 Tab:Toggle{
 	Name = "Anti-Freeze/Ice (requires admin)",
 	StartingState = false,
-	Description = "Made by Cizz",
+	Description = "Hi?",
 	Callback = function(state)
 		_G.noice = state
 		if state then
@@ -175,7 +175,7 @@ Tab:Toggle{
 Tab:Toggle{
 	Name = "Anti-Jail (requires admin)",
 	StartingState = false,
-	Description = "Made by Cizz",
+	Description = "What do you think it does???",
 	Callback = function(state)
 		_G.nojail = state
 		if state then
@@ -195,7 +195,7 @@ Tab:Toggle{
 Tab:Toggle{
 	Name = "Anti-Punish (requires admin)",
 	StartingState = false,
-	Description = "Made by Cizz",
+	Description = "It works?",
 	Callback = function(state)
 		_G.nopunish = state
 		if state then
