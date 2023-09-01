@@ -141,16 +141,20 @@ Players.PlayerAdded:Connect(function(plr)
         end)
 	end
 end)
+
 workspace.Camera:GetPropertyChangedSignal('FieldOfView'):Connect(function()
     if workspace.Camera.FieldOfView ~= 70 then
         workspace.Camera.FieldOfView = 70
-    end
+    end 
 end)
+
 workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
 say(game.Players.LocalPlayer.DisplayName..'-Chan h-has loaded utils V1 :3')
+Player.CharacterAdded:Wait() 
 wait(5)
+Player:Wai
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
 local httpservice = game:GetService('HttpService')
@@ -160,6 +164,7 @@ _G.nojail = false
 _G.nofling = false
 _G.nopunish = false
 _G.perm = false
+_G.nofling
 rchat = function(Message)
   Players:Chat(Message)
 end
@@ -228,6 +233,21 @@ Tab:Toggle{
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
 			Text = ("Anti-Punish "..tostring(state)),
+			Duration = 8,
+			Callback = function() end
+		}
+	end
+}
+
+Tab:Toggle{
+	Name = "Anti-Fling (No admin)",
+	StartingState = false,
+	Description = "Yeah",
+	Callback = function(state)
+		_G.nofling = state
+		GUI:Notification{
+			Title = "Omega's Utils Remastered",
+			Text = ("Anti-Fling "..tostring(state)),
 			Duration = 8,
 			Callback = function() end
 		}
@@ -310,6 +330,15 @@ Player.CharacterAdded:Connect(function(char)
 		end
 	end
 	end)
+    for i,v in char:GetChildren()
+        if v.ClassName == 'Part' then
+            v:WaitForChild("HumanoidRootPart"):GetPropertyChangedSignal('CustomPhysicalProperties'):Connect(function()
+                if _G.nofling then
+                v.CustomPhysicalProperties = PhysicalProperties.new(9e110,9e110,9e110)
+                end
+            end)
+        end
+    end
 end)
 
 workspace.DescendantAdded:Connect(function(descendant)
