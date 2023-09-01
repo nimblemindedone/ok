@@ -154,7 +154,7 @@ say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
 say(game.Players.LocalPlayer.DisplayName..'-Chan h-has loaded utils V1 :3')
 Player.CharacterAdded:Wait() 
 wait(5)
-Player:Wai
+repeat wait() until Player.Character:FindFirstChild("HumanoidRootPart")
 camera.CameraSubject = Player.Character
 game.Chat.BubbleChatEnabled = false
 local httpservice = game:GetService('HttpService')
@@ -164,7 +164,7 @@ _G.nojail = false
 _G.nofling = false
 _G.nopunish = false
 _G.perm = false
-_G.nofling
+_G.nofling = false
 rchat = function(Message)
   Players:Chat(Message)
 end
@@ -330,7 +330,7 @@ Player.CharacterAdded:Connect(function(char)
 		end
 	end
 	end)
-    for i,v in char:GetChildren()
+    for i,v in char:GetChildren() do
         if v.ClassName == 'Part' then
             v:WaitForChild("HumanoidRootPart"):GetPropertyChangedSignal('CustomPhysicalProperties'):Connect(function()
                 if _G.nofling then
