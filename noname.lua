@@ -355,12 +355,13 @@ workspace.SecureParts.ResetPads.ClickDetector:GetPropertyChangedSignal('MaxActiv
 end)
 
 coroutine.wrap(function()
-    while _G.nofling do
-		wait()
+    while wait() do
+    if _G.nofling then
     for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
         if child:IsA("BasePart") then
             child.CustomPhysicalProperties = PhysicalProperties.new(9e110,9e110,9e110)
         end
+    end
     end
     end
 end)()
