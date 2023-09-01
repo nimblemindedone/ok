@@ -152,7 +152,6 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
 say(game.Players.LocalPlayer.DisplayName..'-Chan h-has loaded utils V1 :3')
-Player.CharacterAdded:Wait() 
 wait(5)
 repeat wait() until Player.Character:FindFirstChild("HumanoidRootPart")
 camera.CameraSubject = Player.Character
