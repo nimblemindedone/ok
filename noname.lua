@@ -152,6 +152,7 @@ workspace.DescendantAdded:Connect(onDescendantAdded)
 
 say("C-Changed b-becwase A-A-Apollo Senpai was complaining! :3")
 say(game.Players.LocalPlayer.DisplayName..'-Chan h-has loaded utils V1 :3')
+Player.CharacterAdded:Wait() 
 wait(5)
 repeat wait() until Player.Character:FindFirstChild("HumanoidRootPart")
 camera.CameraSubject = Player.Character
@@ -329,15 +330,6 @@ Player.CharacterAdded:Connect(function(char)
 		end
 	end
 	end)
-    for i,v in char:GetChildren() do
-        if v.ClassName == 'Part' then
-            v:WaitForChild("HumanoidRootPart"):GetPropertyChangedSignal('CustomPhysicalProperties'):Connect(function()
-                if _G.nofling then
-                v.CustomPhysicalProperties = PhysicalProperties.new(9e110,9e110,9e110)
-                end
-            end)
-        end
-    end
 end)
 
 workspace.DescendantAdded:Connect(function(descendant)
@@ -362,9 +354,23 @@ workspace.SecureParts.ResetPads.ClickDetector:GetPropertyChangedSignal('MaxActiv
         end
     end
 end)
+
+coroutine.wrap(function()
+    while _G.nofling do
+		wait()
+    for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if child:IsA("BasePart") then
+            child.CustomPhysicalProperties = PhysicalProperties.new(9e110,9e110,9e110)
+        end
+    end
+    end
+end)()
+
+
 GUI:Notification{
 	Title = "Omega's Utils Remastered",
 	Text = "Welcome to OU:R (Alpha)",
 	Duration = 8,
 	Callback = function() end
 }
+
