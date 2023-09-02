@@ -262,6 +262,11 @@ Tab:Toggle{
 	Description = "error is a mrrp mrrp",
 	Callback = function(state)
 		_G.nosit = state
+		if state then 
+			if Player.Character.Humanoid.Sit == true then
+				Player.Character.Humanoid.Sit = false
+			end
+		end
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
 			Text = ("Anti-Sit "..tostring(state)),
