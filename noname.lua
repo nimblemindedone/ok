@@ -410,7 +410,7 @@ Player.CharacterAdded:Connect(function(char)
 	end)
 	for _, child in pairs(char:GetDescendants()) do
 		if child:IsA("BasePart") then
-			child::GetPropertyChangedSignal('CustomPhysicalProperties'):Connect(function()
+			child:GetPropertyChangedSignal('CustomPhysicalProperties'):Connect(function()
 				if _G.nofling then
 					child.CustomPhysicalProperties = PhysicalProperties.new(9e110,9e110,9e110)
 				end
