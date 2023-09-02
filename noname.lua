@@ -164,6 +164,9 @@ _G.nofling = false
 _G.nopunish = false
 _G.perm = false
 _G.nofling = false
+_G.nosize = false
+_G.noflat = false
+_G.nosit = false
 rchat = function(Message)
   Players:Chat(Message)
 end
@@ -241,12 +244,63 @@ Tab:Toggle{
 Tab:Toggle{
 	Name = "Anti-Fling (No admin)",
 	StartingState = false,
-	Description = "Yeah",
+	Description = "reset after disabling",
 	Callback = function(state)
 		_G.nofling = state
 		GUI:Notification{
 			Title = "Omega's Utils Remastered",
 			Text = ("Anti-Fling "..tostring(state)),
+			Duration = 8,
+			Callback = function() end
+		}
+	end
+}
+
+Tab:Toggle{
+	Name = "Anti-Sit (No admin)",
+	StartingState = false,
+	Description = "error is a mrrp mrrp",
+	Callback = function(state)
+		_G.nosit = state
+		GUI:Notification{
+			Title = "Omega's Utils Remastered",
+			Text = ("Anti-Sit "..tostring(state)),
+			Duration = 8,
+			Callback = function() end
+		}
+	end
+}
+
+Tab:Toggle{
+	Name = "Anti-Size (requires admin)",
+	StartingState = false,
+	Description = "Yeah",
+	Callback = function(state)
+		_G.nosize = state
+		if PLayer.Character.Humanoid.CustomScale.Value~= 1 then 
+			rchat(":unsize")
+		end
+		GUI:Notification{
+			Title = "Omega's Utils Remastered",
+			Text = ("Anti-Size "..tostring(state)),
+			Duration = 8,
+			Callback = function() end
+		}
+	end
+}
+
+Tab:Toggle{
+	Name = "Anti-Flatten (requires admin)",
+	StartingState = false,
+	Description = "Fr",
+	Callback = function(state)
+		_G.noflat = state
+		if PLayer.Character.Humanoid.FlattenScale.Value~= 1 then 
+			rchat(":unflatten")
+		end
+		GUI:Notification{
+			Title = "Omega's Utils Remastered",
+			Text = ("Anti-Flatten "..tostring(state)),
 			Duration = 8,
 			Callback = function() end
 		}
@@ -321,11 +375,36 @@ Player.CharacterAdded:Connect(function(char)
     	end
 	end
 	end)
+
 	char:WaitForChild("HumanoidRootPart"):GetPropertyChangedSignal('Anchored'):Connect(function()
 	if _G.noice then
 		if char.HumanoidRootPart.Anchored then
 			task.wait()
 			rchat(":thaw")
+		end
+	end
+	end)
+
+	char.Humanoid:GetPropertyChangedSignal('Sit'):Connect(function()
+	if _G.nosit then
+		if char.Humanoid.Sit == true then
+			char.Humanoid.Sit = false
+		end
+	end
+	end)
+
+	char.Humanoid.CustomScale:GetPropertyChangedSignal('Value'):Connect(function()
+	if _G.nosize then
+		if char.Humanoid.CustomScale.Value ~= 1 then
+			rchat(":unsize")
+		end
+	end
+	end)
+
+	char.Humanoid.CustomScale:GetPropertyChangedSignal('Value'):Connect(function()
+	if _G.noflat then
+		if char.Humanoid.FlattenScale.Value ~= 1 then
+			rchat(":unflatten")
 		end
 	end
 	end)
