@@ -407,10 +407,9 @@ Player.CharacterAdded:Connect(function(char)
 	end
 	end)
 
-	char.Humanoid.CustomScale:GetPropertyChangedSignal('Value'):Connect(function()
-	if char.Humanoid.FlattenScale.Value ~= 1 then
-		if _G.noflat  then
-			task.wait()
+	char.Humanoid.FlattenScale:GetPropertyChangedSignal('Value'):Connect(function()
+	if _G.noflat then
+		if char.Humanoid.FlattenScale.Value ~= 1 then
 			rchat(":unflatten")
 		end
 	end
