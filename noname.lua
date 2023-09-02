@@ -391,8 +391,9 @@ Player.CharacterAdded:Connect(function(char)
 	end)
 
 	char.Humanoid:GetPropertyChangedSignal('Sit'):Connect(function()
-	if _G.nosit then
-		if char.Humanoid.Sit == true then
+	if char.Humanoid.Sit == true then
+		if _G.nosit then
+			task.wait()
 			char.Humanoid.Sit = false
 		end
 	end
