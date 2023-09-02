@@ -300,7 +300,7 @@ Tab:Toggle{
 	Description = "Fr",
 	Callback = function(state)
 		_G.noflat = state
-		if PLayer.Character.Humanoid.FlattenScale.Value~= 1 then 
+		if Player.Character.Humanoid.FlattenScale.Value ~= 1 then 
 			rchat(":unflatten")
 		end
 		GUI:Notification{
