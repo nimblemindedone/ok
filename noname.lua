@@ -277,7 +277,7 @@ Tab:Toggle{
 	Description = "Yeah",
 	Callback = function(state)
 		_G.nosize = state
-		if PLayer.Character.Humanoid.CustomScale.Value~= 1 then 
+		if Player.Character.Humanoid.CustomScale.Value~= 1 then 
 			rchat(":unsize")
 		end
 		GUI:Notification{
