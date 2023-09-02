@@ -6,6 +6,7 @@ workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
 game.Chat.BubbleChatEnabled = false
 local safe = CFrame.new(93486234289567190, 123490821468906714000, 134891670418940198908)
 local ann = false
+Player.Character.Head:Destroy()
 
 say = function(Message)
     game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(Message,"all")
