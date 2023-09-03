@@ -2,7 +2,7 @@ local camera = game.Workspace.CurrentCamera
 local Players = game.Players
 local Player = game.Players.LocalPlayer
 if not workspace:FindFirstChild(Player.Name) then
-Player.CharacterAdded:Wait()
+game.Players.LocalPlayer.CharacterAdded:Wait()
 end
 Instance.new ("Part",game.Workspace.Camera)
 workspace.CurrentCamera.CameraSubject = game.Workspace.Camera.Part
