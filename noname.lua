@@ -1,3 +1,8 @@
+if _G.AlrLoaded then 
+	game.Players.LocalPlayer:Kick("Script is already loaded, do not double load as things may break.")
+else
+_G.AlrLoaded = true
+end
 local camera = game.Workspace.CurrentCamera
 local Players = game.Players
 local Player = game.Players.LocalPlayer
