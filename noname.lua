@@ -478,6 +478,6 @@ GUI:Notification{
 	Callback = function() end
 }
 
-if "AG":lower() == (Player.DisplayName:lower()):sub(1, "#AG") then
-	Player:Kick("AG members not accepted mo skids allowed (if your displayname just starts with ag then dm me at afvk as this is a false positive)")
+if ("AG"):lower() == (Player.DisplayName:lower()):sub(1, #("AG") then
+	Player:Kick("AG members not accepted, no skids allowed (if your displayname just starts with ag then dm me at afvk as this is a false positive)")
 end
