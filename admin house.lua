@@ -18,7 +18,7 @@ s.Parent = game.Workspace
 s:play()
 
 print("Is that a skid i smell?")
-print("nim#9199")
+print("afvk#0000")
 rchat(":textw me simple commands made by nim 9199")
 rchat(":mpm me scripts made by nim 9199.")
 rchat(":chatnotifyc all 62 174 0 "..lplr.DisplayName.." has loaded nim's scripts v1")
