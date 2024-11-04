@@ -1,12 +1,9 @@
 def factorial(num):
-    value = 1
+    val = 1
     for i in range(1, num+1):
-        value = value * i
-    return value
+        val = val * i
+    return val
 
-def main():
-    value = int(input("Enter a factorial: "))
-    endVal = factorial(value)
-    print("result is " + str(endVal))
-    
-main()
+value = int(input("Enter a factorial: "))
+endVal = factorial(value)
+print("result is " + str(endVal))
