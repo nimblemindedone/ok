@@ -5,7 +5,7 @@ def factorial(num):
     return value
 
 def main():
-    value = 5
+    value = int(input("Enter a factorial"))
     print(value)
     endVal = factorial(value)
     print(endVal)
